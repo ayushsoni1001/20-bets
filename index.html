@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>20 Bets to Prediction of your trajectory</title>
+    <meta name="description" content="Make 20 lifetime bets and get a playful prediction of your trajectory. Inspired by Warren Buffett’s punchcard idea." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="http://20bets.ayushsoni.com/" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="author" content="Ayush Soni" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="20 Bets" />
+    <meta property="og:title" content="20 Bets — Punchcard for life choices" />
+    <meta property="og:description" content="Make 20 lifetime bets and get a playful prediction of your trajectory. Inspired by Warren Buffett’s punchcard idea." />
+    <meta property="og:url" content="http://20bets.ayushsoni.com/" />
+    <meta property="og:image" content="http://20bets.ayushsoni.com/20bets-og.png" />
+    <meta property="og:image:alt" content="20 Bets — Playful prediction of your trajectory" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ayysoni" />
+    <meta name="twitter:creator" content="@ayysoni" />
+    <meta name="twitter:title" content="20 Bets — Punchcard for life choices" />
+    <meta name="twitter:description" content="Make 20 lifetime bets and get a playful prediction of your trajectory. Inspired by Warren Buffett’s punchcard idea." />
+    <meta name="twitter:image" content="http://20bets.ayushsoni.com/20bets-og.png" />
+    <meta name="twitter:image:alt" content="20 Bets — Playful prediction of your trajectory" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎯</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Inter", "ui-sans-serif", "system-ui"],
+            },
+            colors: {
+              punch: {
+                50: "#f2f8ff",
+                100: "#dcebff",
+                200: "#b6d6ff",
+                300: "#86baff",
+                400: "#589aff",
+                500: "#2f78ff",
+                600: "#1d5cf5",
+                700: "#1649c4",
+                800: "#123c9c",
+                900: "#102f77",
+              },
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: 0, transform: "translateY(12px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              pop: {
+                "0%": { transform: "scale(0.95)" },
+                "100%": { transform: "scale(1)" },
+              },
+              confetti: {
+                "0%": { transform: "translateY(-20vh) rotate(0)" },
+                "100%": { transform: "translateY(110vh) rotate(720deg)" },
+              },
+            },
+            animation: {
+              fadeInUp: "fadeInUp 400ms ease-out both",
+              pop: "pop 200ms ease-out both",
+              confetti: "confetti 1800ms linear forwards",
+            },
+            boxShadow: {
+              glow: "0 0 0 2px rgba(99,102,241,.15), 0 10px 30px -10px rgba(99,102,241,.35)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      /* Subtle grain */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+        background-size: 12px 12px;
+        opacity: .25;
+      }
+      /* Hide scrollbar in card area on mobile */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 font-display selection:bg-indigo-500/30">
+    <main class="relative min-h-screen">
+      <!-- Background gradient orbs -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-indigo-600/30 blur-3xl"></div>
+        <div class="absolute top-40 -right-40 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-3xl"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-4xl px-4 py-8 sm:py-12">
+        <!-- Header -->
+        <header class="mb-6 sm:mb-10 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 shadow-glow ring-1 ring-white/10">
+              <span class="text-2xl">🎯</span>
+            </div>
+            <div>
+              <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">20 Bets</h1>
+              <p class="text-xs sm:text-sm text-slate-300">A punchcard for life choices</p>
+            </div>
+          </div>
+
+          <a href="https://github.com/ayushsoni1001/20-bets" target="_blank" class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-white/10 transition">
+            <span>Star the idea</span> ⭐️
+          </a>
+        </header>
+
+        <!-- Intro / Card Container -->
+        <section id="app" class="">
+          <!-- Intro Card -->
+          <div id="intro" class="animate-fadeInUp">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-xl backdrop-blur">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="text-3xl">🧠</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Warren Buffett’s Punchcard</h2>
+              </div>
+              <p class="text-slate-300 leading-relaxed">
+                Imagine you could only make <span class="font-semibold text-indigo-300">20 major decisions</span> in your life. Which ones would you choose? Make your picks, and we’ll reveal a playful prediction of your trajectory.
+              </p>
+              <ul class="mt-4 grid gap-2 text-slate-300 text-sm">
+                <li>• 20 animated prompts</li>
+                <li>• Clean, fast, and fun</li>
+                <li>• Hardcoded outcomes, no tracking</li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button id="startBtn" class="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-600/20 hover:bg-indigo-600 active:scale-[.98] transition">
+                  Start your 20 bets <span class="text-xl">➡️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz / Game -->
+          <div id="game" class="hidden animate-fadeInUp">
+            <!-- Progress -->
+            <div class="mb-3 flex items-center justify-between">
+              <div class="text-sm text-slate-300" id="progressLabel">Bet 1 / 20</div>
+              <div class="text-sm text-slate-300">Punchcard <span id="punchCount" class="font-semibold text-indigo-300">0</span>/20</div>
+            </div>
+            <div class="mb-6 h-2 w-full overflow-hidden rounded-full bg-white/10">
+              <div id="progressBar" class="h-full w-0 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300"></div>
+            </div>
+
+            <!-- Card -->
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-7 shadow-xl backdrop-blur">
+              <div class="mb-4 flex items-center gap-3">
+                <div id="betEmoji" class="text-2xl">🎯</div>
+                <div>
+                  <h3 id="betTitle" class="text-xl sm:text-2xl font-bold">Title</h3>
+                  <p id="betSubtitle" class="text-xs sm:text-sm text-slate-300">Subtitle</p>
+                </div>
+              </div>
+
+              <div id="options" class="grid gap-3"></div>
+
+              <div class="mt-6 flex items-center justify-between">
+                <button id="backBtn" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:bg-white/10 transition disabled:opacity-40 disabled:cursor-not-allowed">
+                  ← Back
+                </button>
+                <button id="nextBtn" class="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-5 py-2.5 font-semibold text-white shadow-lg shadow-indigo-600/20 hover:bg-indigo-600 active:scale-[.98] transition disabled:opacity-40 disabled:cursor-not-allowed">
+                  Next <span class="text-lg">⏭️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div id="results" class="hidden animate-fadeInUp">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-xl backdrop-blur">
+              <div class="mb-4 flex items-center gap-3">
+                <span class="text-3xl" id="archetypeEmoji">🔮</span>
+                <div>
+                  <h3 id="archetypeTitle" class="text-2xl sm:text-3xl font-extrabold">Your trajectory</h3>
+                  <p class="text-xs sm:text-sm text-slate-300">Based on 20 punchcard bets</p>
+                </div>
+              </div>
+
+              <p id="archetypeBlurb" class="text-slate-200 leading-relaxed"></p>
+
+              <!-- Bars -->
+              <div class="mt-6 grid gap-3" id="scoreBars"></div>
+
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <h4 class="mb-2 font-semibold text-slate-200">Highlights</h4>
+                  <ul id="highlights" class="list-disc pl-5 text-slate-300 text-sm space-y-1"></ul>
+                </div>
+                <div>
+                  <h4 class="mb-2 font-semibold text-slate-200">Potential blind spots</h4>
+                  <ul id="flags" class="list-disc pl-5 text-slate-300 text-sm space-y-1"></ul>
+                </div>
+              </div>
+
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <button id="replayBtn" class="inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-600/20 hover:bg-indigo-600 active:scale-[.98] transition">
+                  Play again <span>🔁</span>
+                </button>
+                <button id="shareBtn" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200 hover:bg-white/10 transition">
+                  Share <span>📣</span>
+                </button>
+                <button id="copyBtn" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200 hover:bg-white/10 transition">
+                  Copy summary <span>📋</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mt-10 text-center text-xs text-slate-400">
+          Made with curiosity ✨ + runs offline, no data stored.
+        </footer>
+      </div>
+    </main>
+
+    <!-- Confetti layer -->
+    <div id="confetti" class="pointer-events-none fixed inset-0 overflow-hidden"></div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
